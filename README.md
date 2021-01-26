@@ -1,2 +1,35 @@
-# project_2
-Utilisez les bases de Python pour l'analyse de marché
+# project 2
+Use the basics of Python for market analysis
+## Installation
+Create a virtual environment
+```bash
+python -m venv env
+```
+
+clone repository locally
+```bash
+git clone https://github.com/nasr-edine/P2_drai_nasr-edine.git
+```
+Install dependencies
+```bash
+pip3 install -r requirements.txt
+```
+## Usage
+
+Go to the directory while content source files:
+```python
+cd src/
+```
+
+execute the python script below for begin to scrape the website:
+```python
+python3 scrape_all_books.py
+```
+### Folder Structure with csv et images folders
+
+    .
+    ├── src                     # Source files
+    ├── csv                     # Csv files for each book categories
+    ├── images                  # images downloaded are saved in this directory
+    ├── requirements.txt        # for install all dependencies necessary for this project
+    └── README.md
