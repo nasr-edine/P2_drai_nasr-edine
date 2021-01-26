@@ -25,7 +25,7 @@ execute the python script below for begin to scrape the website:
 ```python
 python3 scrape_all_books.py
 ```
-### Folder Structure with csv et images folders
+### Folder Structure with csv et images folders created
 
     .
     ├── src                     # Source files
