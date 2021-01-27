@@ -33,3 +33,9 @@ python3 scrape_all_books.py
     ├── images                  # images downloaded are saved in this directory
     ├── requirements.txt        # for install all dependencies necessary for this project
     └── README.md
+
+## How to check style code ?
+
+```python
+flake8 src/*
+```
