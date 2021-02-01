@@ -7,7 +7,7 @@ clone repository locally
 git clone https://github.com/nasr-edine/P2_drai_nasr-edine.git
 ```
 
-Create a virtual environment
+Create a virtual environment in root folder of project 
 ```bash
 python -m venv env
 ```
@@ -36,6 +36,7 @@ python3 scrape_all_books.py
 
     .
     ├── src                     # Source files
+    ├── env                     # Virtual environment python
     ├── csv                     # Csv files for each book categories
     ├── images                  # images downloaded are saved in this directory
     ├── requirements.txt        # for install all dependencies necessary for this project
