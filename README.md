@@ -35,10 +35,10 @@ python3 scrape_all_books.py
 ### Folder Structure with csv et images folders created
 
     .
-    ├── src                     # Source files
-    ├── env                     # Virtual environment python
-    ├── csv                     # Csv files for each book categories
-    ├── images                  # images downloaded are saved in this directory
+    ├── src/                    # Source files
+    ├── env/                    # Virtual environment python
+    ├── csv/                    # Csv files for each book categories
+    ├── images/                 # images downloaded are saved in this directory
     ├── requirements.txt        # for install all dependencies necessary for this project
     └── README.md
 
