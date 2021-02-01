@@ -47,3 +47,14 @@ python3 scrape_all_books.py
 ```python
 flake8 src/*
 ```
+
+## How to run unittest
+Exemple for check all book categories available in home page
+    new_project
+    ├──src
+        ├── scrape_all_books.py        # 
+        └── test_categories.py
+```python
+cd src/
+python -m unittest test_categories
+```
