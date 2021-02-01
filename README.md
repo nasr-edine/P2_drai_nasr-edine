@@ -54,7 +54,7 @@ flake8 src/*
         ├── scrape_all_books.py        # 
         └── test_categories.py
 
-Exemple for check all book categories available in home page
+Exemple for check all book categories available in sidebar of home page
 ```python
 cd src/
 python -m unittest test_categories
