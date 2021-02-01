@@ -1,15 +1,22 @@
 # project 2
 Use the basics of Python for market analysis
 ## Installation
-Create a virtual environment
-```bash
-python -m venv env
-```
 
 clone repository locally
 ```bash
 git clone https://github.com/nasr-edine/P2_drai_nasr-edine.git
 ```
+
+Create a virtual environment
+```bash
+python -m venv env
+```
+
+Activate virtual environment
+```bash
+source ./env/bin/activate
+```
+
 Install dependencies
 ```bash
 pip3 install -r requirements.txt
