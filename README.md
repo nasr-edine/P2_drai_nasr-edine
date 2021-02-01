@@ -1,4 +1,4 @@
-# project 2
+# project 2: web scrapping
 Use the basics of Python for market analysis
 ## Installation
 
