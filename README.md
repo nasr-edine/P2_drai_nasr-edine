@@ -49,7 +49,7 @@ flake8 src/*
 ```
 
 ### How to run unittest
-    new_project
+    P2_drai_nasr-edine
     └──src
         ├── scrape_all_books.py        # 
         └── test_categories.py
