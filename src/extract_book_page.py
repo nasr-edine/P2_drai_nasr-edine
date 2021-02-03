@@ -7,8 +7,9 @@ from save_image import dowload_image
 import os
 
 
-def extract_detailled_product(product_page_url, category_file):
+def extract_detailled_product(product_page_url, category_file, session):
     html_requests = requests.get(product_page_url).text
+    # html_requests = session.get(product_page_url).text
     soup = BeautifulSoup(html_requests, 'lxml')
 
     title = soup.find('h1').text
@@ -25,7 +26,7 @@ def extract_detailled_product(product_page_url, category_file):
     base = 'http://books.toscrape.com'
     image_url = product_gallery.find("img", )['src']
     image_url = urljoin(base, image_url)
-    dowload_image(image_url)
+    dowload_image(image_url, session)
 
     td_list = []
 

@@ -4,9 +4,10 @@ import requests
 import csv
 from urllib.parse import urljoin
 import os
-
+import time
 
 from reach_next_page import reach_next_page
+from extract_book_page import extract_detailled_product
 
 
 def create_csv_file(filename):
@@ -26,7 +27,7 @@ def create_csv_file(filename):
         ])
 
 
-def extract_books_url(category_page, category):
+def extract_books_url(category_page, category, session):
 
     current_directory = '../'
     csv_dir = 'csv'
@@ -34,10 +35,16 @@ def extract_books_url(category_page, category):
     filename = category + '.csv'
     path = os.path.join(path_csv, filename)
     create_csv_file(path)
-    all_pages = reach_next_page(category_page)
+    all_pages = reach_next_page(category_page, session)
+
+    # start_time = time.time()
+
+    # session = requests.session()
 
     for page in all_pages:
+        # html_requests = session.get(page).text
         html_requests = requests.get(page).text
+
         soup = BeautifulSoup(html_requests, 'lxml')
 
         web_url = 'http://books.toscrape.com'
@@ -53,5 +60,13 @@ def extract_books_url(category_page, category):
             absolute_path = urljoin(web_url,   absolute_path)
 
             urls.append(absolute_path)
+    # record information for 1 book in a dictionnary
+    # dic = {}
+    # print('page:' + str(i))
+    for url in urls:
+        extract_detailled_product(url, category, session)
+
+    # print("--- %s seconds ---" % (time.time() - start_time))
 
     return urls
+    return 0

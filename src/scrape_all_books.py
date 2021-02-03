@@ -4,12 +4,33 @@ import requests
 from urllib.parse import urljoin
 from extract_urls_category import extract_books_url
 import os
+import time
+import concurrent.futures
+
+
+def function2(category_url, a):
+    i = 0
+    categories_name = []
+    # for item in categories_url:
+
+    # print(a[i].text.strip())
+    categories_name.append(a[i].text.strip())
+    extract_books_url(category_url, a[i].text.strip())
+    i += 1
 
 
 def function():
-
+    start_time = time.time()
+    # home_url = 'http://books.toscrape.com/index.html'
     home_url = 'http://books.toscrape.com/index.html'
+
+    # session = requests.Session()
+    session = 0
+    # make a get request
+    # s.get(home_url)
+    # html_page = s.get(home_url)
     html_page = requests.get(home_url)
+    # html_page = session.get(home_url)
 
     soup = BeautifulSoup(html_page.text, 'lxml')
 
@@ -26,19 +47,31 @@ def function():
         os.mkdir(path)
 
     web_url = 'http://books.toscrape.com'
-    list = []
+    categories_url = []
 
     for item in a:
 
         absolute_path = urljoin(web_url, item.attrs['href'])
 
-        list.append(absolute_path)
+        categories_url.append(absolute_path)
     i = 0
-    for item in list:
+    # list = []
+    categories_name = []
 
-        print(a[i].text.strip())
-        extract_books_url(item, a[i].text.strip())
-        i += 1
+    for item in categories_url:
+
+        # print(a[i].text.strip())
+        categories_name.append(a[i].text.strip())
+        extract_books_url(item, a[i].text.strip(), session)
+        end_time = time.time()
+
+        print(end_time - start_time)
+
+    i += 1
+
+    end_time = time.time()
+    print(end_time - start_time)
+    return categories_url, categories_name
 
 
 function()
