@@ -17,8 +17,8 @@ def get_current_page(soup):
 
 
 def reach_next_page(url_page, session):
-    response = requests.get(url_page).text
-    # response = session.get(url_page).text
+    # response = requests.get(url_page).text
+    response = session.get(url_page).text
 
     soup = BeautifulSoup(response, 'lxml')
     list = []

@@ -8,8 +8,8 @@ import os
 
 
 def extract_detailled_product(product_page_url, category_file, session):
-    html_requests = requests.get(product_page_url).text
-    # html_requests = session.get(product_page_url).text
+    # html_requests = requests.get(product_page_url).text
+    html_requests = session.get(product_page_url).text
     soup = BeautifulSoup(html_requests, 'lxml')
 
     title = soup.find('h1').text

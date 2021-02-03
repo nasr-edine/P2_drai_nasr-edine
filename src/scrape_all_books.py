@@ -24,13 +24,13 @@ def function():
     # home_url = 'http://books.toscrape.com/index.html'
     home_url = 'http://books.toscrape.com/index.html'
 
-    # session = requests.Session()
-    session = 0
+    session = requests.Session()
+    # session = 0
     # make a get request
     # s.get(home_url)
     # html_page = s.get(home_url)
-    html_page = requests.get(home_url)
-    # html_page = session.get(home_url)
+    # html_page = requests.get(home_url)
+    html_page = session.get(home_url)
 
     soup = BeautifulSoup(html_page.text, 'lxml')
 

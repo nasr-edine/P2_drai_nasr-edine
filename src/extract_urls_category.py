@@ -42,8 +42,8 @@ def extract_books_url(category_page, category, session):
     # session = requests.session()
 
     for page in all_pages:
-        # html_requests = session.get(page).text
-        html_requests = requests.get(page).text
+        html_requests = session.get(page).text
+        # html_requests = requests.get(page).text
 
         soup = BeautifulSoup(html_requests, 'lxml')
 
