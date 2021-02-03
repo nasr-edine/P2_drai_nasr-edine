@@ -25,6 +25,10 @@ def function():
     home_url = 'http://books.toscrape.com/index.html'
 
     session = requests.Session()
+    # adapter = requests.adapters.HTTPAdapter(
+    #     pool_connections=1000,
+    #     pool_maxsize=1000)
+    # session.mount('http://', adapter)
     # session = 0
     # make a get request
     # s.get(home_url)
@@ -66,8 +70,7 @@ def function():
         end_time = time.time()
 
         print(end_time - start_time)
-
-    i += 1
+        i += 1
 
     end_time = time.time()
     print(end_time - start_time)
