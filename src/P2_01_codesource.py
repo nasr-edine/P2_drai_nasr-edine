@@ -12,6 +12,8 @@ home_url = 'http://books.toscrape.com/index.html'
 
 
 if __name__ == '__main__':
+    start_time = time.time()
+
     P2_06_codesource.initialize()
 
     html_page = P2_06_codesource.s.get(home_url)
@@ -29,11 +31,10 @@ if __name__ == '__main__':
         os.mkdir(path)
 
     for item in P2_06_codesource.a:
-        start_time = time.time()
         absolute_path = urljoin(base_url, item.attrs['href'])
         extract_books_url(absolute_path)
-        end_time = time.time()
-        print(end_time - start_time)
+    end_time = time.time()
+    print(end_time - start_time)
 
     # function = concurrent.futures.ProcessPoolExecutor(max_workers=4)
     # for item in categories_url:
