@@ -30,7 +30,7 @@ cd src/
 
 execute the python script below for begin to scrape the website:
 ```python
-python3 scrape_all_books.py
+python P2_01_codesource.py
 ```
 ### Folder Structure with csv et images folders created
 
@@ -51,7 +51,7 @@ flake8 src/*
 ### How to run unittest
     P2_drai_nasr-edine
     └──src
-        ├── scrape_all_books.py        # 
+        ├── python P2_01_codesource.py        # 
         └── test_categories.py
 
 Exemple for check all book categories available in sidebar of home page
