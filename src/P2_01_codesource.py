@@ -41,4 +41,5 @@ if __name__ == '__main__':
 
     # with ProcessPoolExecutor(max_workers=10) as executor:
     #     start_time = time.time()
-    #     futures = [ executor.submit(extract_books_url, url) for url in categories_url]
+    #     futures = [ executor.submit(extract_books_url, url)
+    #       for url in categories_url]
